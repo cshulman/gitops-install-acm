@@ -10,10 +10,11 @@ spec:
   name: advanced-cluster-management
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-  # ensure ACM stays on 2.16.0
-  installPlanApproval: Manual
-  startingCSV: advanced-cluster-management.v2.16.0
-# Uncomment this section for placement on infra nodes
+  installPlanApproval: Automatic 
+  # Uncomment to ensure ACM stays on 2.16.0
+  # installPlanApproval: Manual
+  # startingCSV: advanced-cluster-management.v2.16.0
+# Comment this section for placement on compute nodes
   config:
     nodeSelector:
       node-role.kubernetes.io/infra: ""
