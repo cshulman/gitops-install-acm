@@ -4,13 +4,14 @@ metadata:
   name: multiclusterhub
   namespace: open-cluster-management
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "2"
 spec:
-# Uncomment section for deploying to infra nodes
+  disableHubSelfManagement: false
+  localClusterName: local-cluster
+  # 'High' deploys multiple replicas for HA. Use 'Basic' for smaller/test environments to save resources.
+  availabilityConfig: High
   nodeSelector:
     node-role.kubernetes.io/infra: ""
   tolerations:
     - key: node-role.kubernetes.io/infra
       effect: NoSchedule
-  # 'High' deploys multiple replicas for HA. Use 'Basic' for smaller/test environments to save resources.
-  availabilityConfig: High
