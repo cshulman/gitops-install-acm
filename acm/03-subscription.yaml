@@ -10,10 +10,10 @@ spec:
   name: advanced-cluster-management
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-  installPlanApproval: Automatic 
-  # Uncomment to ensure ACM stays on 2.16.0
-  # installPlanApproval: Manual
-  # startingCSV: advanced-cluster-management.v2.16.0
+  #installPlanApproval: Automatic
+  # Uncomment to ensure ACM stays on 2.16.1
+  installPlanApproval: Manual
+  startingCSV: advanced-cluster-management.v2.16.1
 # Comment this section for placement on compute nodes
   config:
     nodeSelector:
