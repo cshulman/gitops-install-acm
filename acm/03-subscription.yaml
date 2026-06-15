@@ -6,14 +6,14 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
 spec:
-  channel: release-2.16  # ACM version channel
+  channel: release-2.15  # ACM version channel
   name: advanced-cluster-management
   source: redhat-operators
   sourceNamespace: openshift-marketplace
   #installPlanApproval: Automatic
-  # Uncomment to ensure ACM stays on 2.16.1
+  # Uncomment to ensure ACM stays on 2.15.3
   installPlanApproval: Manual
-  startingCSV: advanced-cluster-management.v2.16.1
+  startingCSV: advanced-cluster-management.v2.15.3
 # Comment this section for placement on compute nodes
   config:
     nodeSelector:
