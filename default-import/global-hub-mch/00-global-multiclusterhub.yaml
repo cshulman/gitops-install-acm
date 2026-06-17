@@ -1,0 +1,17 @@
+apiVersion: operator.open-cluster-management.io/v1
+kind: MultiClusterHub
+metadata:
+  name: multiclusterhub
+  namespace: open-cluster-management
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  disableHubSelfManagement: false
+  localClusterName: local-cluster
+  # 'High' deploys multiple replicas for HA. Use 'Basic' for smaller/test environments to save resources.
+  availabilityConfig: High
+  nodeSelector:
+    node-role.kubernetes.io/infra: ""
+  tolerations:
+    - key: node-role.kubernetes.io/infra
+      effect: NoSchedule
